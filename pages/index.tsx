@@ -37,11 +37,11 @@ const checkList = async () => {
       console.log('brown', message);
       (document.getElementById('status') as HTMLElement).textContent = message;
     } else if (found1 !== undefined){
-      const message = "We like you're style MF, you're on the Gold List! You have 3 free mints, fancy boy!"
+      const message = "We like you're style MF, you're on the Gold List! You have 3 free mints."
       console.log('gold', message);
       (document.getElementById('status') as HTMLElement).textContent = message;
     } else if (found2 !== undefined){
-      const message = "Oh wow, look at you Mr. Big Shot on Platinum over here!! You have 5 free mints!"
+      const message = "Oh wow, look at the Big Shot on Platinum over here!! You have 5 free mints."
       console.log('platinum', message);
       (document.getElementById('status') as HTMLElement).textContent = message;
     } else {
