@@ -116,7 +116,7 @@
 .message{
   color: #0a0a0a;
   font-family: cooper-black-std;
-  font-size: 80px !important;
+  font-size: 60px !important;
   padding: 20px;
 }
 
@@ -131,7 +131,7 @@
 .mainButton, .altButton{
   cursor: pointer;
   font-family: cooper-black-std !important;
-  font-size: 20pt;
+  font-size: 22px;
   padding: 5px 20px;
   border: none;
   border-radius: 100px;
