@@ -131,7 +131,7 @@
 .mainButton, .altButton{
   cursor: pointer;
   font-family: cooper-black-std !important;
-  font-size: 22pt;
+  font-size: 20pt;
   padding: 5px 20px;
   border: none;
   border-radius: 100px;
