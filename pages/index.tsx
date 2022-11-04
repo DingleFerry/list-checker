@@ -79,6 +79,7 @@ const checkList = async () => {
 
   return (
     <div className={styles.card}>
+      <h1 className={styles.total}>{totalMFs} total MFs!</h1>
       <div className={styles.counter1}>
         <h1 className={styles.counter}>Brown: {bListTotal}
           <span className={styles.goldCounter}> Gold: {gListTotal}</span>
@@ -90,7 +91,6 @@ const checkList = async () => {
         <h1 className={styles.counter} id={styles.goldCounter}> Gold: {gListTotal}</h1>
         <h1 className={styles.counter}>Brown: {bListTotal}</h1>
       </div>
-      <h1 className={styles.total}>{totalMFs} total MFs!</h1>
       {address ? (
         <>
           <p id="status" className={styles.message}>{message}</p>
