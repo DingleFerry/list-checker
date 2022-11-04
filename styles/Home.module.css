@@ -120,3 +120,7 @@
 .mainButton:hover, .altButton:hover{
   transform: scale(1.1);
 }
+
+#connectBtn{
+  margin-top: 40px;
+}

@@ -84,7 +84,7 @@ const checkList = async () => {
           {/* <pre>Secret: {JSON.stringify(secret || null)}</pre> */}
         </>
       ) : (
-        <button onClick={connect} className={styles.mainButton}>Connect Wallet</button>
+        <button onClick={connect} className={styles.mainButton} id={styles.connectBtn}>Connect Wallet</button>
       )}
     </div>
   );
