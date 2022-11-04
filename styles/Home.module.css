@@ -65,26 +65,35 @@
 .message{
   color: #0a0a0a;
   font-family: cooper-black-std;
-  font-size: 60px !important;
+  font-size: 60px;
   padding-top: 20px;
   width: 60vw;
-  text-align: center !important;
+  text-align: center;
+  margin: auto !important;
+}
+
+.mistake, .clideo{
+  color: #0a0a0a;
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 22px;
+  max-width: 90vw;
   margin: auto !important;
 }
 
 .mistake{
-  color: #0a0a0a;
-  font-family: poppins;
-  font-weight: 700;
-  font-size: 22px !important;
-  padding: 20px;
+  padding-bottom: 20px;
+}
+
+.clideo{
+  padding-top: 20px;
 }
 
 .counter{
   background: #0a0a0a;
   color: #995c3d;
   font-family: cooper-black-std;
-  font-size: 60px !important;
+  font-size: 60px;
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0;
@@ -141,18 +150,26 @@
   margin-top: 40px;
 }
 
+.buttons2{
+  display: none;
+}
+
 @media (max-width: 1300px) {
-  .counter1{
+  .counter1, .buttons1{
     display: none;
   }
 
-  .counter2{
+  .counter2, .buttons2{
     display: block;
   }
 
   .altButton{
     margin-left: 0px;
-    margin-top: 40px;
+    margin-top: 20px;
+  }
+
+  .counter{
+    font-size: 48px;
   }
 
   #goldCounter{

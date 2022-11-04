@@ -15,8 +15,9 @@ const Home: NextPage = () => {
   const pList = platinumList.platinumList;
 
 
-const message = "Click to verify status.";
+const message = "Connected! Click to verify status.";
 const mistake = "";
+const clideo = "";
 
 let bListTotal = bList.length;
 let gListTotal = gList.length;
@@ -45,23 +46,31 @@ const checkList = async () => {
 
     if (found !== undefined) {
       const message = "Congrats! You're on the Brown List!";
+      const clideo = "";
       const mistake = "If you believe this to be incorrect, stay calm MF and reach out to us on Twitter.";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('clideo') as HTMLElement).textContent = clideo;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else if (found1 !== undefined){
       const message = "We like your style MF, you're on the Gold List!";
+      const clideo = "";
       const mistake = "If you believe this to be incorrect, stay calm MF and reach out to us on Twitter.";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('clideo') as HTMLElement).textContent = clideo;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else if (found2 !== undefined){
       const message = "Oh wow, look at the MF'n Big Shot on Platinum over here!!";
+      const clideo = "";
       const mistake = "";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('clideo') as HTMLElement).textContent = clideo;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else {
-      const message = "Unfortunately, you are not on The Brownlist. So go make some memes while there's still time!";
+      const message = "Unfortunately, you are not currently on The Brownlist. So go make memes while there's still time!";
+      const clideo = "If you don't know how, search for “meme maker” to get the ball rolling.";
       const mistake = "If you believe this to be incorrect, stay calm MF and reach out to us on Twitter.";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('clideo') as HTMLElement).textContent = clideo;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     }
 };
@@ -83,12 +92,18 @@ const checkList = async () => {
       {address ? (
         <>
           <p id="status" className={styles.message}>{message}</p>
+          <p id="clideo" className={styles.clideo}>{clideo}</p>
           <p id="mistake" className={styles.mistake}>{mistake}</p>
-          {/* <pre>User: {JSON.stringify(user || null)}</pre> */}
-          {/* <button onClick={getSecret}>Get Secret</button> */}
-          <button onClick={checkList} className={styles.mainButton}>Which list am I on?</button>
-          <button onClick={disconnect} className={styles.altButton} id="disconnect">Disconnect Wallet</button>
-          {/* <pre>Secret: {JSON.stringify(secret || null)}</pre> */}
+
+          <div className={styles.buttons1}>
+            <button onClick={checkList} className={styles.mainButton}>Which list am I on?</button>
+            <button onClick={disconnect} className={styles.altButton} id="disconnect">Disconnect Wallet</button>
+          </div>
+
+          <div className={styles.buttons2}>
+            <button onClick={checkList} className={styles.mainButton}>Which list am I on?</button><br></br>
+            <button onClick={disconnect} className={styles.altButton} id="disconnect">Disconnect Wallet</button>
+          </div>
         </>
       ) : (
         <button onClick={connect} className={styles.mainButton} id={styles.connectBtn}>Connect Wallet</button>
