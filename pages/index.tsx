@@ -10,14 +10,22 @@ const Home: NextPage = () => {
   const connect = useMetamask();
   const disconnect = useDisconnect();
 
+  const bList = brownList.brownList;
+  const gList = goldList.goldList;
+  const pList = platinumList.platinumList;
+
 
 const message = "Click to verify status.";
 const mistake = "";
 
+let bListTotal = bList.length;
+let gListTotal = gList.length;
+let pListTotal = pList.length;
+
 const checkList = async () => {
-  const arr: string[] = brownList.brownList;
-  const arr1: string[] = goldList.goldList;
-  const arr2: string[] = platinumList.platinumList;
+  const arr: string[] = bList;
+  const arr1: string[] = gList;
+  const arr2: string[] = pList;
 
   const str = address?.toString();
 
@@ -33,7 +41,7 @@ const checkList = async () => {
       return element.toLocaleLowerCase() === str?.toLowerCase();
     });
 
-    console.log(found);
+    console.log(bListTotal, gListTotal, pListTotal);
 
     if (found !== undefined) {
       const message = "Congrats! You're on the Brown List!";
@@ -61,6 +69,10 @@ const checkList = async () => {
 
   return (
     <div className={styles.card}>
+      <h1 className={styles.counter}>Brown: {bListTotal}
+        <span className={styles.goldCounter}> Gold: {gListTotal}</span>
+        <span className={styles.platCounter}> Platinum: {pListTotal}</span>
+      </h1>
       {address ? (
         <>
           <p id="status" className={styles.message}>{message}</p>
