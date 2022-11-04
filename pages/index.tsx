@@ -22,6 +22,7 @@ const clideo = "";
 let bListTotal = bList.length;
 let gListTotal = gList.length;
 let pListTotal = pList.length;
+let totalMFs = bListTotal + gListTotal + pListTotal;
 
 const checkList = async () => {
   const arr: string[] = bList;
@@ -78,6 +79,7 @@ const checkList = async () => {
 
   return (
     <div className={styles.card}>
+      <h1 className={styles.total}>{totalMFs} total MFs!</h1>
       <div className={styles.counter1}>
         <h1 className={styles.counter}>Brown: {bListTotal}
           <span className={styles.goldCounter}> Gold: {gListTotal}</span>

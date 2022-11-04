@@ -89,6 +89,15 @@
   padding-top: 20px;
 }
 
+.total{
+  color: #0a0a0a;
+  font-family: cooper-black-std;
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
 .counter{
   background: #0a0a0a;
   color: #995c3d;
@@ -173,7 +182,7 @@
     margin-bottom: 40px;
   }
 
-  .counter{
+  .counter, .total{
     font-size: 48px;
   }
 
