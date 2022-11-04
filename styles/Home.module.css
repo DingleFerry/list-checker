@@ -185,4 +185,8 @@
     text-align: center !important;
     margin: auto !important;
   }
+
+  .clideo, .mistake{
+    font-size: 18px;
+  }
 }
