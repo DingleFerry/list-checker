@@ -66,7 +66,10 @@
   color: #0a0a0a;
   font-family: cooper-black-std;
   font-size: 60px !important;
-  padding: 20px;
+  padding-top: 20px;
+  width: 60vw;
+  text-align: center !important;
+  margin: auto !important;
 }
 
 .mistake{
