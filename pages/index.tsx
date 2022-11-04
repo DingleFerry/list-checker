@@ -1,7 +1,9 @@
-import { useAddress, useDisconnect, useUser, useLogin, useLogout, useMetamask } from '@thirdweb-dev/react';
+import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react';
 import type { NextPage } from 'next';
 import styles from "../styles/Home.module.css";
-import brownList from "../public/lists.json"
+import brownList from "../public/brownList.json";
+import goldList from "../public/goldList.json";
+import platinumList from "../public/platinumList.json"
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -10,11 +12,12 @@ const Home: NextPage = () => {
 
 
 const message = "Click to verify status.";
+const mistake = "";
 
 const checkList = async () => {
-  const arr: string[] = ["0xF6255DF3fC84a0Fd682371F366a70e365E90f7Eb"];
-  const arr1: string[] = ["0x278920977CDF6a6EC22B287142511dd7fB620245"];
-  const arr2: string[] = ["0xA3e4E4da0f8D272EE960647F509C9d4Ee9e81698"];
+  const arr: string[] = brownList.brownList;
+  const arr1: string[] = goldList.goldList;
+  const arr2: string[] = platinumList.platinumList;
 
   const str = address?.toString();
 
@@ -33,21 +36,25 @@ const checkList = async () => {
     console.log(found);
 
     if (found !== undefined) {
-      const message = "Congrats! You're on the Brown List! You have 1 free mint."
-      console.log('brown', message);
+      const message = "Congrats! You're on the Brown List!";
+      const mistake = "If you believe this to be incorrect, stay calm and reach out to us on Twitter MF.";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else if (found1 !== undefined){
-      const message = "We like you're style MF, you're on the Gold List! You have 3 free mints."
-      console.log('gold', message);
+      const message = "We like you're style, you're on the Gold List!";
+      const mistake = "If you believe this to be incorrect, stay calm and reach out to us on Twitter MF.";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else if (found2 !== undefined){
-      const message = "Oh wow, look at the Big Shot on Platinum over here!! You have 5 free mints."
-      console.log('platinum', message);
+      const message = "Oh wow, look at the Big Shot on Platinum over here!!";
+      const mistake = "";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else {
-      const message = "Unfortunately, you are not on Brown, Gold, or Platinum. You have 0 free mints. So, go make some memes MF!"
-      console.log('none', message);
+      const message = "Unfortunately, you are not on The Brownlist. So go make some memes while there's still time!";
+      const mistake = "If you believe this to be incorrect, stay calm and reach out to us on Twitter MF.";
       (document.getElementById('status') as HTMLElement).textContent = message;
+      (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     }
 };
 
@@ -57,6 +64,7 @@ const checkList = async () => {
       {address ? (
         <>
           <p id="status" className={styles.message}>{message}</p>
+          <p id="mistake" className={styles.mistake}>{mistake}</p>
           {/* <pre>User: {JSON.stringify(user || null)}</pre> */}
           {/* <button onClick={getSecret}>Get Secret</button> */}
           <button onClick={checkList} className={styles.mainButton}>Which list am I on?</button>
