@@ -163,6 +163,10 @@
     display: block;
   }
 
+  .mainButton, .mainButton:hover, .mainButton:active, .mainButton:focus, .altButton, .altButton:hover, .altButton:active, .altButton:focus{
+    color: #f5f5f5 !important;
+  }
+
   .altButton{
     margin-left: 0px;
     margin-top: 20px;
