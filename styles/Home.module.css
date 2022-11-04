@@ -100,6 +100,18 @@
   color: #f5f5f5;
 }
 
+#goldCounter{
+  color: #D68E22;
+}
+
+#platCounter{
+  color: #f5f5f5;
+}
+
+.counter2{
+  display: none;
+}
+
 .mainButton{
   background: #B842A0;
 }
@@ -127,4 +139,33 @@
 
 #connectBtn{
   margin-top: 40px;
+}
+
+@media (max-width: 1300px) {
+  .counter1{
+    display: none;
+  }
+
+  .counter2{
+    display: block;
+  }
+
+  .altButton{
+    margin-left: 0px;
+    margin-top: 40px;
+  }
+
+  #goldCounter{
+    padding: 0;
+  }
+
+  .message{
+    color: #0a0a0a;
+    font-family: cooper-black-std;
+    font-size: 36px !important;
+    padding-top: 20px;
+    width: 90vw;
+    text-align: center !important;
+    margin: auto !important;
+  }
 }

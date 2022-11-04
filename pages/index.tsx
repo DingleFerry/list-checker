@@ -45,22 +45,22 @@ const checkList = async () => {
 
     if (found !== undefined) {
       const message = "Congrats! You're on the Brown List!";
-      const mistake = "If you believe this to be incorrect, stay calm and reach out to us on Twitter MF.";
+      const mistake = "If you believe this to be incorrect, stay calm MF and reach out to us on Twitter.";
       (document.getElementById('status') as HTMLElement).textContent = message;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else if (found1 !== undefined){
-      const message = "We like you're style, you're on the Gold List!";
-      const mistake = "If you believe this to be incorrect, stay calm and reach out to us on Twitter MF.";
+      const message = "We like your style MF, you're on the Gold List!";
+      const mistake = "If you believe this to be incorrect, stay calm MF and reach out to us on Twitter.";
       (document.getElementById('status') as HTMLElement).textContent = message;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else if (found2 !== undefined){
-      const message = "Oh wow, look at the Big Shot on Platinum over here!!";
+      const message = "Oh wow, look at the MF'n Big Shot on Platinum over here!!";
       const mistake = "";
       (document.getElementById('status') as HTMLElement).textContent = message;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     } else {
       const message = "Unfortunately, you are not on The Brownlist. So go make some memes while there's still time!";
-      const mistake = "If you believe this to be incorrect, stay calm and reach out to us on Twitter MF.";
+      const mistake = "If you believe this to be incorrect, stay calm MF and reach out to us on Twitter.";
       (document.getElementById('status') as HTMLElement).textContent = message;
       (document.getElementById('mistake') as HTMLElement).textContent = mistake;
     }
@@ -69,10 +69,17 @@ const checkList = async () => {
 
   return (
     <div className={styles.card}>
-      <h1 className={styles.counter}>Brown: {bListTotal}
-        <span className={styles.goldCounter}> Gold: {gListTotal}</span>
-        <span className={styles.platCounter}> Platinum: {pListTotal}</span>
-      </h1>
+      <div className={styles.counter1}>
+        <h1 className={styles.counter}>Brown: {bListTotal}
+          <span className={styles.goldCounter}> Gold: {gListTotal}</span>
+          <span className={styles.platCounter}> Platinum: {pListTotal}</span>
+        </h1>
+      </div>
+      <div className={styles.counter2}>
+        <h1 className={styles.counter} id={styles.platCounter}> Platinum: {pListTotal}</h1>
+        <h1 className={styles.counter} id={styles.goldCounter}> Gold: {gListTotal}</h1>
+        <h1 className={styles.counter}>Brown: {bListTotal}</h1>
+      </div>
       {address ? (
         <>
           <p id="status" className={styles.message}>{message}</p>
